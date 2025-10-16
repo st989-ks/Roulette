@@ -17,6 +17,13 @@ kotlin {
 
     jvm()
 
+    @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
+    wasmJs {
+        outputModuleName = "composeApp"
+        browser()
+        binaries.executable()
+    }
+
     sourceSets {
         commonMain.dependencies {
             //Compose
@@ -41,6 +48,11 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinxCoroutinesSwing)
+        }
+
+        wasmJsMain.dependencies {
+            implementation(compose.html.core)
+            implementation(compose.runtime)
         }
     }
 }
