@@ -1,0 +1,34 @@
+[versions]
+agp = "8.12.3"
+kotlin = "2.2.20"
+kotlinxCoroutines = "1.10.2"
+composeMultiplatform = "1.9.1"
+activityCompose = "1.11.0"
+composeBom = "2025.10.00"
+androidxLifecycle = "2.9.5"
+androidCompileSdk = "36"
+androidMinSdk = "26"
+androidTargetSdk = "36"
+
+[libraries]
+kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinxCoroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinxCoroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinxCoroutines" }
+
+androidxLifecycleRuntimeKtxCompose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidxActivityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidxComposeBom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidxUi = { group = "androidx.compose.ui", name = "ui" }
+androidxUiGraphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidxUiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidxUiFoundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidxUiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
